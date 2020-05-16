@@ -13,45 +13,83 @@
 ## Question 1
 
 Write code that prints all the numbers from 1 to 150, **inclusive.**
+```swift
+for i in 1...150 {
+  print(i)
+}
+```
 
 ***
 ## Question 2
 
 Write code that prints all the numbers from 142 to 159, **exclusive.**
+```swift
+
+for i in 142...159 where i > 142 && i < 159 {
+  print(i)
+}
+```
 
 ***
 ## Question 3
 
 Write code that prints only the even numbers from 15 to 80, **inclusive.**
+```swift
+for i in 15...80 where i % 2 == 0 {
+    print(i)
+  }
+```
 
 ***
 ## Question 4
 
 Write code that prints only the odd numbers from 19 to 51, **inclusive.**
+```swift
+for i in 19...51 where i % 2 != 0 {
+    print(i)
+  }
+```
 
 ***
 ## Question 5
 
 Write code that prints all the numbers that end in a **5** from 1 to 100, **exclusive.**
-
+```swift
+for i in 1...100 where if i % 5 == 0 && i % 10 != 0 {
+    print(i)
+  }
+```
 ***
 ## Question 6
 
 Write code that prints all the numbers that end in a 7 from 1 to 40, **inclusive.**
-
+```swift
+for i in 1...40 where i % 5 == 0 && i % 10 != 0 {
+  print(i + 2)
+}
+```
 ***
 ## Question 7
 
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that are divisible by 3`
-
+```swift
+for i in 20...150 where i % 3 == 0 {
+  print(i)
+}
+```
 ***
 ## Question 8
 
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that are divisible by 2 and 3`
+```swift
+for i in 20...150 where i % 2 == 0 && i % 3 == 0 {
+  print(i)
+}
+```
 
 ***
 ## Question 9
@@ -59,14 +97,25 @@ Given a range of numbers from 20 to 150 inclusive, print out all the numbers tha
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that end with a 4`
-
+```swift
+for i in 20...150 where i % 5 == 0 && i % 10 != 0 {
+  print(i - 1)
+}
+```
 ***
 ## Question 10
 
 Given a range of numbers from 20 to 150, print out all the numbers that follows these conditions:
 
 `Print out numbers: 31, 35, 40 to 60.`
+```swift
+for i in 20...150 {
+  if i == 31 || i == 35 ||  i > 40 && i < 60 {
+    print(i)
+  }
+}
 
+```
 ***
 ## Question 11
 
@@ -80,6 +129,7 @@ while (i > 3) {
 }
 
 // Your explanation here
+It will keep running indefinitely because i will always be greater than 3.
 ```
 
 ***
@@ -92,6 +142,15 @@ var i = 5
 
 while (i > 3) {
     i += 1
+    }
+}
+
+//re-written code below
+while (i >= 3) {
+  i += 1
+  if i > 9 {
+    break
+  }
 }
 ```
 
@@ -106,6 +165,19 @@ var i = 5
 while (i > 3) {
     i += 1
 }
+
+//re-written code below
+var i = 5
+var runtime = 0
+
+while (i > 3) {
+  i += 1
+  runtime += 1
+  
+  if runtime == 1000 {
+    break
+  }
+}
 ```
 
 ***
@@ -118,6 +190,23 @@ var i = 5
 
 while (i > 3) {
     i += 1
+}
+
+//re-written code below
+var i = 5
+var runtime = 0
+
+while (i > 3) {
+  i += 1
+  runtime += 1
+  
+  if runtime == 1000 {
+    break
+  }
+  
+  if i % 2 == 0 {
+    print(i)
+  }
 }
 ```
 
@@ -142,7 +231,9 @@ repeat {
     i += 1
 } while i <= 10
 ```
-
+```
+The two loops give the same output because they are both loops with the same conditions so they'll start at one and end at ten. And they have the same increments.
+```
 # Bonus =)
 
 ***
