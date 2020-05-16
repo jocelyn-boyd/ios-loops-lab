@@ -231,20 +231,20 @@ repeat {
     i += 1
 } while i <= 10
 ```
-```
+
 The two loops give the same output because they are both loops with the same conditions so they'll start at one and end at ten. And they have the same increments.
-```
+
 # Bonus =)
 
 ***
 ## Question 1
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
-```
-The break statement ends execution of an entire control flow statement immediately. The break statement can be used inside a switch or loop statement when you want to terminate the execution of the switch or loop statement earlier than would otherwise be the case.
+
+The break statement ends execution of an entire control flow statement immediately.The break statement can be used inside a switch or loop statement when you want to terminate the execution of the switch or loop statement earlier than would otherwise be the case.
 
 The continue statement tells a loop to stop what it is doing and start again at the beginning of the next iteration through the loop. It says “I am done with the current loop iteration” without leaving the loop altogether.
-```
+
 Example
 ```swift
 var shields = 5
@@ -284,7 +284,7 @@ while shields > 0 {
 ***
 ## Question 2
 
-Without using Xcode, what will the loop below print? Select all that apply.
+Without using Xcode, what will the loop below print?
 
 ```swift
 for i in 1...10 {
