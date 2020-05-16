@@ -240,6 +240,46 @@ The two loops give the same output because they are both loops with the same con
 ## Question 1
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
+```
+The break statement ends execution of an entire control flow statement immediately. The break statement can be used inside a switch or loop statement when you want to terminate the execution of the switch or loop statement earlier than would otherwise be the case.
+
+The continue statement tells a loop to stop what it is doing and start again at the beginning of the next iteration through the loop. It says “I am done with the current loop iteration” without leaving the loop altogether.
+```
+Example
+```swift
+var shields = 5
+var blastersOverheating = false
+var blasterFireCount = 0
+var spaceDemonsDestroyed = 0
+
+while shields > 0 {
+
+    if spaceDemonsDestroyed == 500 {
+        print("You beat the game!")
+        break
+    }
+
+    if blastersOverheating {
+        print("Blasters are overheated! Cooldown initiated.")
+        sleep(5)
+        print("Blasters ready to fire")
+        sleep(1)
+        blastersOverheating = false
+        blasterFireCount = 0
+        continue
+    }
+
+    if blasterFireCount > 100 {
+        blastersOverheating = true
+        continue
+    }
+
+    // Fire blasters!
+    print("Fire blasters!")
+    blasterFireCount += 1
+    spaceDemonsDestroyed += 1
+}
+```
 
 ***
 ## Question 2
@@ -254,22 +294,15 @@ for i in 1...10 {
     print(i)
 }
 ```
-
-[]1
-[]2
-[]3
-[]4
-[]5
-[]6
-[]7
-[]8
-[]9
-[]10
+Solution
+```
+1, 2, 3, 8, 9, 10
+```
 
 ***
 ## Question 3
 
-Without using Xcode, what will the loop below print? Select all that apply.
+Without using Xcode, what will the loop below print?
 
 ```swift
 for i in 1...10 {
@@ -279,17 +312,10 @@ for i in 1...10 {
     print(i)
 }
 ```
-
-[]1
-[]2
-[]3
-[]4
-[]5
-[]6
-[]7
-[]8
-[]9
-[]10
+Solution
+```
+1, 2, 3
+```
 
 ***
 ## Question 4
@@ -306,17 +332,46 @@ outerloop: for x in 1...3 {
     }
 }
 ```
+Solution
+```
+x = 1, y = 1
+x = 2, y = 1
+x = 3, y = 1
+
+when y == 2 it'll skip y = 2 and y = 3 steps and continue outerloop
+```
 
 ***
 ## Question 5
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** x and y are both integers.
+```swift
+//write code below 
+
+for x in 0...10 {
+  for y in 0...10 {
+    print("\(x),\(y)")
+  }
+}
+```
 
 ***
 ## Question 6
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** the difference of x and y is at least 5, and x and y are both integers.
 
+```swift 
+// write code below
+for x in 0...10 {
+  for y in 0...10 {
+  
+    if x - y >= 5 || y - x >= 5 {
+    
+      print("(\(x), \(y))")
+    }
+  }
+}
+```
 ***
 ## Question 7
 
@@ -332,6 +387,14 @@ Output:
 9
 16
 25
+
+// write code below
+var n = 1
+
+while n < 6 {
+  print(n * n)
+  n += 1
+}
 ```
 
 ***
@@ -364,4 +427,14 @@ Try printing a single line of * first.
 Hint 2
 You can use print("") to print an empty line.
 
-***
+```swift
+// write code below
+var n = 3
+
+for _ in 1...n {
+  for _ in 1...n {
+    print("*", separator: "", terminator: " ")
+}
+  print(" ")
+}
+```
